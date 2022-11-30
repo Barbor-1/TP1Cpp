@@ -6,15 +6,17 @@
 namespace date {
    class Date {
    public:
-      Date(int month=1, int day=1);
+      Date(int years=0, int month=1, int day=1);
+      int years() const;
       int month() const;
       int day() const;
+      void updateYears(int years);
       void updateMonth(int month);
       void updateDay(int day);
       void next();
       void back();
 
-      bool operator == (const Date& d) const; // d1 == d2
+     /* bool operator == (const Date& d) const; // d1 == d2
       bool operator != (const Date& d) const; // d1 != d2
       bool operator < (const Date& d) const;  // d1 <  d2
       bool operator > (const Date& d) const;  // d1 >  d2
@@ -25,15 +27,16 @@ namespace date {
       Date operator ++ (); // prefix increment: ++date
       Date operator -- (); // prefix decrement: --date
       Date operator ++ (int); // use int paramater for postfix increment: date++
-      Date operator -- (int); // use int paramater for postfix decrement: date--
+      Date operator -- (int); // use int paramater for postfix decrement: date--*/
 
    private:
+      int _years;
       int _month;
       int _day;
 
    };
 
-   bool isDate(int month, int day);
+   bool isDate(int years, int month, int day);
    int getDaysInMonth(int month);
    int dayOfYear(Date d);
    std::string toString(Date d);
