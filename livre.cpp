@@ -2,7 +2,7 @@
 
 namespace bibli{
     Livre::Livre(std::string titre, std::string auteur, std::string genre, date::Date dateParution,std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn) {
-
+        _liste.push_back("bibliothèque");
     }
 
     std::string Livre::getTitre(){
@@ -25,7 +25,12 @@ namespace bibli{
 
         return _isbn;
     }
+    void Livre::printEmprunt(){
 
+        for(int i=0; i < _liste.size();i++){
+            std::cout << _liste.at(i) << std::endl;
+        }
+    }
 
 
 }
