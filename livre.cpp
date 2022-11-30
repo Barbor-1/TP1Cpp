@@ -1,7 +1,7 @@
 #include "livre.h"
 
 namespace bibli{
-    Livre::Livre(std::string titre, std::string auteur, std::string genre, date::Date dateParution,std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _isbn(isbn) {
+    Livre::Livre(std::string titre, std::string auteur, std::string genre, date::Date dateParution,std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn) {
 
     }
 

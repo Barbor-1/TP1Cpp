@@ -2,11 +2,13 @@
 #include <assert.h> 
 
 namespace date {
-    Date::Date(int month, int day) : _month(month), _day(day) {
-        bool status = isDate(month, day);
+    Date::Date(int years, int month, int day) : _years(years), _month(month), _day(day) {
+        bool status = isDate(years,month, day);
         assert(status && "Date is not valid");
     }
-
+    int Date::years() const {
+        return _years;
+    }
     int Date::month() const {
     	return _month;
     }
@@ -15,22 +17,30 @@ namespace date {
     	return _day;
     }
 
+    void Date::updateYears(int years){
+        bool status = isDate(years,_month,_day);
+        assert(status==true && "New month is not valid");
+        _years=years;
+    }
+
     void Date::updateMonth(int month) {
-        bool status = isDate(month, _day);
+        bool status = isDate(_years,month, _day);
         assert(status==true && "New month is not valid");
         _month = month;
     }
 
     void Date::updateDay(int day) {
-        bool status = isDate(_month, day);
+        bool status = isDate(_years,_month, day);
         assert(status==true && "New day is not valid");
         _day = day;
     }
 
     void Date::next() {
+        
         if ((_month==12) && (_day==31)) {
             _day=1;
             _month=1;
+            _years++;
         }
         else if (_day==getDaysInMonth(_month)) {
             _day=1;
@@ -42,9 +52,13 @@ namespace date {
     }
 
     void Date::back() {
+        if(_years<0){
+            _years=99;
+        }
         if ((_month==1) && (_day==1)) {
             _day=31;
             _month=12;
+            _years--;
         }
         else if (_day==1) {
             _month--;
@@ -56,7 +70,7 @@ namespace date {
     }
 
 
-    Date Date::operator + (const int days) const {
+    /*Date Date::operator + (const int days) const {
         if (days <0) { //if days <0, we call Date - (-days)
             return *this - (-days);
         }
@@ -181,10 +195,11 @@ namespace date {
      *
     */
 
-    bool isDate(int month, int day) {
+    bool isDate(int years,int month, int day) {
         if ((day < 1) || (day>31)) return false;
         if ((month <1) || (month>12)) return false;
         if ((month == 2) && (day > 28)) return false;
+        if(years<0) return false;
         if (((month == 4) || (month == 6) ||
             (month == 9) || (month == 11)) && (day > 30)) return false;
         return true;
@@ -208,7 +223,7 @@ namespace date {
     }
 
     std::string toString(Date d) {
-        return std::to_string(d.day()) + "/" + std::to_string(d.month()) ;
+        return std::to_string(d.day()) + "/" + std::to_string(d.month())+ "/" + std::to_string(d.years()) ;
     }
 
     
