@@ -8,10 +8,10 @@ namespace bibli {
 class Lecteur {
 public:
 	Lecteur(std::string ident = "tomdy", std::string nom = "Dynak", std::string prenom = "Tom");
- 	std::string getIdent();
-    std::string getNom();
-    std::string getPrenom();
-    void AfficherLecteur();
+ 	std::string getIdent() const;
+    std::string getNom() const;
+    std::string getPrenom() const;
+    void AfficherLecteur() const;
     
 
 

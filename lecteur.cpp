@@ -7,18 +7,18 @@ Lecteur::Lecteur(std::string ident, std::string nom, std::string prenom): _ident
 	 _listeisbn.push_back("Liste ISBN emprunt");
 
 }
-    std::string Lecteur::getIdent(){
+    std::string Lecteur::getIdent() const {
         return _ident;
     }
 
-    std::string Lecteur::getNom(){
+    std::string Lecteur::getNom() const {
         return _nom;
     }
 
-    std::string Lecteur::getPrenom(){
+    std::string Lecteur::getPrenom() const {
         return _prenom;
     }
- void Lecteur::AfficherLecteur(){
+ void Lecteur::AfficherLecteur() const {
  	 std::cout << getIdent() << "" << getNom() << "" << getPrenom() << std::endl;
  }
 }
