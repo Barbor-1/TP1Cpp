@@ -3,7 +3,7 @@
 
 namespace date {
     Date::Date(int day=1, int month=1, int years=0) : _day(day), _month(month), _years(years)  {
-        bool status = isDate(years,month, day);
+        bool status = isDate(day,month, years);
         assert(status && "Date is not valid");
     }
     int Date::years() const {
@@ -18,19 +18,19 @@ namespace date {
     }
 
     void Date::updateYears(int years){
-        bool status = isDate(years,_month,_day);
+        bool status = isDate(_day,_month,years);
         assert(status==true && "New month is not valid");
         _years=years;
     }
 
     void Date::updateMonth(int month) {
-        bool status = isDate(_years,month, _day);
+        bool status = isDate(_day,month,_years );
         assert(status==true && "New month is not valid");
         _month = month;
     }
 
     void Date::updateDay(int day) {
-        bool status = isDate(_years,_month, day);
+        bool status = isDate(day,_month,_years, );
         assert(status==true && "New day is not valid");
         _day = day;
     }
