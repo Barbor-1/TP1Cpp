@@ -16,19 +16,6 @@ namespace date {
       void next();
       void back();
 
-     /* bool operator == (const Date& d) const; // d1 == d2
-      bool operator != (const Date& d) const; // d1 != d2
-      bool operator < (const Date& d) const;  // d1 <  d2
-      bool operator > (const Date& d) const;  // d1 >  d2
-      bool operator <= (const Date& d) const; // d1 <= d2
-      bool operator >= (const Date& d) const; // d1 <= d2
-      Date operator + (const int days) const; // d1 + integer
-      Date operator - (const int days) const; // d1 - integer
-      Date operator ++ (); // prefix increment: ++date
-      Date operator -- (); // prefix decrement: --date
-      Date operator ++ (int); // use int paramater for postfix increment: date++
-      Date operator -- (int); // use int paramater for postfix decrement: date--*/
-
    private:
       int _years;
       int _month;
