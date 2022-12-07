@@ -9,13 +9,13 @@ namespace bibli{
     class Livre{
         public:
         Livre(std::string titre = "Hypersensible & introverti", Auteur auteur = Auteur("00000000", "DuMoulin", "Jean"), std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000");
-        std::string getTitre();
-        std::string getAuteur();
-        std::string getGenre();
-        std::string getISBN();
+        std::string getTitre() const;
+        std::string getAuteur() const;
+        std::string getGenre() const;
+        std::string getISBN() const;
         date::Date getDate();
-        void printEmprunt();
-        void printVar();
+        void printEmprunt() const;
+        void printVar() const;
         
         private:
         std::string _titre;

@@ -6,15 +6,15 @@ namespace bibli{
 
 	}
 
-	std::string Auteur::getNom(){
+	std::string Auteur::getNom() const {
 		return _nom;
 	}
 	
-	std::string Auteur::getPrenom(){
+	std::string Auteur::getPrenom() const {
 		return _prenom;
 	}
 	
-	std::string Auteur::getNomEntier(){
+	std::string Auteur::getNomEntier() const {
 		return (_nom + " " + _prenom);
 	}
 }

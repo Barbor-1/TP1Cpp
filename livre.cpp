@@ -5,15 +5,15 @@ namespace bibli{
         _liste.push_back("bibliothèque");
     }
 
-    std::string Livre::getTitre(){
+    std::string Livre::getTitre() const {
         return _titre;
     }
 
-    std::string Livre::getAuteur(){
+    std::string Livre::getAuteur() const {
         return _auteur.getNomEntier();
     }
 
-    std::string Livre::getGenre(){
+    std::string Livre::getGenre() const {
         return _genre;
     }
 
@@ -21,17 +21,17 @@ namespace bibli{
         return _date;
     }
 
-    std::string Livre::getISBN(){
+    std::string Livre::getISBN() const {
         return _isbn;
     }
 
-    void Livre::printEmprunt(){
+    void Livre::printEmprunt() const {
         for(int i=0; i < _liste.size();i++){
             std::cout << _liste.at(i) << std::endl;
         }
     }
 
-    void Livre::printVar(){
+    void Livre::printVar() const {
         std::cout << getTitre() << " " << getAuteur() << " " << getGenre() << " " << getISBN() << std::endl;
     }
 

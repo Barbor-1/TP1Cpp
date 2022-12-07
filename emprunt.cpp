@@ -6,7 +6,7 @@ namespace bibli{
 
 	}
 	
-	std::string Emprunt::getISBN(){
+	std::string Emprunt::getISBN() const {
 	        return _isbn;
 	}
 }
