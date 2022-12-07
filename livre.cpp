@@ -1,8 +1,8 @@
 #include "livre.h"
 
 namespace bibli{
-    Livre::Livre(std::string titre, Auteur auteur, std::string genre, date::Date dateParution, std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn) {
-        _liste.push_back("bibliothèque");
+    Livre::Livre(std::string titre, Auteur auteur, std::string genre, date::Date dateParution, std::string isbn, bool dispo): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn), _dispo(dispo) {
+        _listeID.push_back("bibliothèque");
     }
 
     std::string Livre::getTitre() const {
@@ -25,9 +25,13 @@ namespace bibli{
         return _isbn;
     }
 
+    bool Livre::getDispo() const {
+        return _dispo;
+    }
+
     void Livre::printEmprunt() const {
-        for(int i=0; i < _liste.size();i++){
-            std::cout << _liste.at(i) << std::endl;
+        for(int i=0; i < _listeID.size();i++){
+            std::cout << _listeID.at(i) << std::endl;
         }
     }
 

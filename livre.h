@@ -8,12 +8,13 @@
 namespace bibli{
     class Livre{
         public:
-        Livre(std::string titre = "Hypersensible & introverti", Auteur auteur = Auteur("00000000", "DuMoulin", "Jean"), std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000");
+        Livre(std::string titre = "Hypersensible & introverti", Auteur auteur = Auteur("00000000", "DuMoulin", "Jean"), std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000", bool _dispo = true);
         std::string getTitre() const;
         std::string getAuteur() const;
         std::string getGenre() const;
         std::string getISBN() const;
         date::Date getDate();
+        bool getDispo() const;
         void printEmprunt() const;
         void printVar() const;
         
@@ -23,7 +24,8 @@ namespace bibli{
         std::string _genre;
         date::Date _date;
         std::string _isbn;
-        std::vector<std::string> _liste; //liste d'identifiant d'emprunteur
+        std::vector<std::string> _listeID; //liste d'identifiant d'emprunteur
+        bool _dispo;
 
     };
 

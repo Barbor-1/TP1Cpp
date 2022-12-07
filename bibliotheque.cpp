@@ -1,19 +1,13 @@
 #include <vector>
+#include "date.h"
 #include "bibliotheque.h"
 #include "lecteur.h"
 #include "auteur.h"
 #include "livre.h"
+#include "emprunt.h"
 
 namespace bibli{
 	Bibliotheque::Bibliotheque(){
-		//Comment initialiser les vector? prendre position 0 pour que les vector soient pas vide?
-		Lecteur LecteurA;
-		Auteur AuteurA;
-		Livre LivreA;
-
-		_listeLecteur.push_back(LecteurA);
-		_listeAuteur.push_back(AuteurA);
-		_listeLivre.push_back(LivreA);
 	}
 
 	void Bibliotheque::addLecteur(bibli::Lecteur lecteur){
@@ -26,6 +20,16 @@ namespace bibli{
 
 	void Bibliotheque::addLivre(bibli::Livre livre){
 		_listeLivre.push_back(livre);
+	}
+
+	void Bibliotheque::Emprunter(Livre livre, Lecteur lecteur){
+		if(livre.getDispo()){
+			//Creer un emprunt
+			Emprunt empruntA(date::Date(1,1,2002), livre.getISBN(), lecteur.getIdent());
+		}else{
+			std::cout << "Livre pas disponible" << std::endl;
+		}
+
 	}
 
 }

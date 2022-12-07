@@ -4,14 +4,17 @@
 #include "lecteur.h"
 #include "auteur.h"
 #include "livre.h"
+#include "emprunt.h"
 
 namespace bibli{
 	class Bibliotheque{
 		public:
 			Bibliotheque();
-			void addLecteur(bibli::Lecteur lecteur);
-			void addAuteur(bibli::Auteur auteur);
-			void addLivre(bibli::Livre livre);
+			void addLecteur(Lecteur lecteur);
+			void addAuteur(Auteur auteur);
+			void addLivre(Livre livre);
+			void Emprunter(Livre livre, Lecteur lecteur);
+
 		private:
 			std::vector<Lecteur> _listeLecteur;
 			std::vector<Auteur> _listeAuteur;
