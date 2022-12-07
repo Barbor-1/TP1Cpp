@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     /* code */
     date::Date Anniv(13,9,2002);
     std::cout << date::toString(Anniv) << std::endl;
-    lecteur::Lecteur Test2("tomdy", "Dynak", "Tom");
+    bibli::Lecteur Test2("tomdy", "Dynak", "Tom");
   
 
     Test2.AfficherLecteur();
