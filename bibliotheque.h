@@ -9,6 +9,9 @@ namespace bibli{
 	class Bibliotheque{
 		public:
 			Bibliotheque();
+			void addLecteur(bibli::Lecteur lecteur);
+			void addAuteur(bibli::Auteur auteur);
+			void addLivre(bibli::Livre livre);
 		private:
 			std::vector<Lecteur> _listeLecteur;
 			std::vector<Auteur> _listeAuteur;
