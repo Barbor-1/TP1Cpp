@@ -2,6 +2,7 @@
 #include "date.h"
 #include "livre.h"
 #include "auteur.h"
+#include "emprunt.h"
 
 
 
