@@ -15,6 +15,8 @@ namespace bibli{
         std::string getISBN() const;
         date::Date getDate();
         bool getDispo() const;
+
+        void addToList(std::string id);
         void printEmprunt() const;
         void printVar() const;
         

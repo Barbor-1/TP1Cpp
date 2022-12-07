@@ -2,7 +2,7 @@
 
 namespace bibli{
     Livre::Livre(std::string titre, Auteur auteur, std::string genre, date::Date dateParution, std::string isbn, bool dispo): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn), _dispo(dispo) {
-        _listeID.push_back("bibliothèque");
+        
     }
 
     std::string Livre::getTitre() const {
@@ -27,6 +27,10 @@ namespace bibli{
 
     bool Livre::getDispo() const {
         return _dispo;
+    }
+
+    void Livre::addToList(std::string id){
+        _listeID.push_back(id);
     }
 
     void Livre::printEmprunt() const {

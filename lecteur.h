@@ -11,6 +11,7 @@ public:
  	std::string getIdent() const;
     std::string getNom() const;
     std::string getPrenom() const;
+    void addToList(std::string isbn);
     void AfficherLecteur() const;
     
 
