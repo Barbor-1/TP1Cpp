@@ -4,10 +4,14 @@ Auteur::Auteur(std::string identifiant, std::string nom, std::string prenom, dat
 
 }
 
-std::string getNom(){
+std::string Auteur::getNom(){
 	return _nom;
 }
 
-std::string getPrenom(){
+std::string Auteur::getPrenom(){
 	return _prenom;
+}
+
+std::string Auteur::getNomEntier(){
+	return (_nom + " " + _prenom);
 }

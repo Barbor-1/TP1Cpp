@@ -3,11 +3,12 @@
 #include <string>
 #include <vector>
 #include "date.h"
+#include "auteur.h"
 
 namespace bibli{
     class Livre{
         public:
-        Livre(std::string titre = "Hypersensible & introverti", std::string auteur = "Jean DuMoulin", std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000");
+        Livre(std::string titre = "Hypersensible & introverti", Auteur auteur = Auteur("00000000", "DuMoulin", "Jean"), std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000");
         std::string getTitre();
         std::string getAuteur();
         std::string getGenre();
@@ -18,7 +19,7 @@ namespace bibli{
         
         private:
         std::string _titre;
-        std::string _auteur;
+        Auteur _auteur;
         std::string _genre;
         date::Date _date;
         std::string _isbn;

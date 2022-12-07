@@ -7,6 +7,7 @@ public:
 	Auteur(std::string identifiant = "00000000", std::string nom = "DuMoulin", std::string prenom = "Jean", date::Date naissance = date::Date(1,1,1000));
 	std::string getNom();
 	std::string getPrenom();
+	std::string getNomEntier();
 
 private:
 	std::string _identifiant;

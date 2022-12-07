@@ -1,7 +1,7 @@
 #include "livre.h"
 
 namespace bibli{
-    Livre::Livre(std::string titre, std::string auteur, std::string genre, date::Date dateParution, std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn) {
+    Livre::Livre(std::string titre, Auteur auteur, std::string genre, date::Date dateParution, std::string isbn): _titre(titre), _auteur(auteur), _genre(genre), _date(dateParution), _isbn(isbn) {
         _liste.push_back("bibliothèque");
     }
 
@@ -10,7 +10,7 @@ namespace bibli{
     }
 
     std::string Livre::getAuteur(){
-        return _auteur;
+        return _auteur.getNomEntier();
     }
 
     std::string Livre::getGenre(){
@@ -32,7 +32,7 @@ namespace bibli{
     }
 
     void Livre::printVar(){
-        std::cout << getTitre() << getAuteur() << getGenre() << getISBN() << std::endl;
+        std::cout << getTitre() << " " << getAuteur() << " " << getGenre() << " " << getISBN() << std::endl;
     }
 
 
