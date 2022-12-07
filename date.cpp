@@ -2,7 +2,7 @@
 #include <assert.h> 
 
 namespace date {
-    Date::Date(int years, int month, int day) : _years(years), _month(month), _day(day) {
+    Date::Date(int day=1, int month=1, int years=0) : _day(day), _month(month), _years(years)  {
         bool status = isDate(years,month, day);
         assert(status && "Date is not valid");
     }
@@ -195,7 +195,7 @@ namespace date {
      *
     */
 
-    bool isDate(int years,int month, int day) {
+    bool isDate(int day=1, int month=1, int years=0) {
         if ((day < 1) || (day>31)) return false;
         if ((month <1) || (month>12)) return false;
         if ((month == 2) && (day > 28)) return false;
