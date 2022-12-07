@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
     Test.printEmprunt();
     Test.printVar();
 
-    Auteur Genie;
+    bibli::Auteur Genie;
     std::cout << Genie.getNomEntier() << std::endl;
 
     return 0;

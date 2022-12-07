@@ -23,7 +23,7 @@ namespace bibli{
         std::string _genre;
         date::Date _date;
         std::string _isbn;
-        std::vector<std::string> _liste; //liste d'emprunt
+        std::vector<std::string> _liste; //liste d'identifiant d'emprunteur
 
     };
 
