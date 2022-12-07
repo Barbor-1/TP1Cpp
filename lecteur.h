@@ -4,11 +4,15 @@
 #include <string>
 #include <vector>
 
+namespace lecteur {
 class Lecteur {
 public:
-	Lecteur(std::string ident, std::string nom, std::string prenom, std::vector listeisbn)
-	Livre::Livre getLivre()
-
+	Lecteur(std::string ident = "tomdy", std::string nom = "Dynak", std::string prenom = "Tom");
+ 	std::string getIdent();
+    std::string getNom();
+    std::string getPrenom();
+    void AfficherLecteur();
+    
 
 
 
@@ -16,8 +20,10 @@ private:
 	std::string _ident;
 	std::string _nom;
 	std::string _prenom;
-	std::string _isbn;
-	std::vector _listeisbn
 
 
 };
+
+}
+
+#endif
