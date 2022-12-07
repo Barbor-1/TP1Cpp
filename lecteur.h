@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace lecteur {
+namespace bibli {
 class Lecteur {
 public:
 	Lecteur(std::string ident = "tomdy", std::string nom = "Dynak", std::string prenom = "Tom");
@@ -20,6 +20,7 @@ private:
 	std::string _ident;
 	std::string _nom;
 	std::string _prenom;
+	std::vector<std::string>_listeisbn;
 
 
 };
