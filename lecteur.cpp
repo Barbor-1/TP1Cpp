@@ -1,3 +1,4 @@
+#include <iostream>
 #include "lecteur.h"
 #include <string>
 #include <vector>
@@ -35,5 +36,10 @@ namespace bibli{
 			}
 		}
 		return 0;
+	}
+
+	std::ostream& operator<<(std::ostream& os, Lecteur& lecteur){
+		os << lecteur.getIdent() << " " << lecteur.getPrenom() << " " << lecteur.getNom() << std::endl;
+		return os;
 	}
 }

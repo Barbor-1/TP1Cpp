@@ -44,7 +44,7 @@ int main(){
     bibli::Lecteur LecteurA("0000000a","Dubois","Angela");
     bibli::Lecteur LecteurB("00000001","Braise","Pierre");
 
-
+    std::cout << AuteurA << AuteurB << AuteurC << AuteurD << LecteurA << LecteurB;
     std::cout << LivreA << LivreB << LivreC << LivreD << LivreE << LivreF << LivreG << LivreH << LivreI;
     Municipale.emprunter(LivreE,LecteurA);
     Municipale.emprunter(LivreE,LecteurB);

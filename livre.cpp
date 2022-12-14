@@ -49,7 +49,7 @@ namespace bibli{
     }
 
     std::ostream& operator<<(std::ostream& os, Livre& livre){
-        os << livre.getTitre() << " " << livre.getAuteur() << " " << livre.getGenre() << livre.getDate() << std::endl;
+        os << livre.getTitre() << " " << livre.getAuteur() << " " << livre.getGenre() << " " << livre.getDate() << std::endl;
         return os;
     }
 

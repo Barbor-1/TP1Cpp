@@ -17,6 +17,8 @@ namespace bibli{
 		date::Date _naissance;
 
 	};
+
+	std::ostream& operator<<(std::ostream& os, Auteur& auteur);
 }
 
 #endif

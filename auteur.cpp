@@ -17,4 +17,9 @@ namespace bibli{
 	std::string Auteur::getNomEntier() const {
 		return (_nom + " " + _prenom);
 	}
+
+	std::ostream& operator<<(std::ostream& os, Auteur& auteur){
+		os << auteur.getPrenom() << " " << auteur.getNom() << std::endl;
+		return os;
+	}
 }
