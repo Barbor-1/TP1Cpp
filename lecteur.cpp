@@ -23,7 +23,17 @@ namespace bibli{
  		_listeisbn.push_back(isbn);
  	}
 
- 	void Lecteur::AfficherLecteur() const {
+ 	void Lecteur::afficherLecteur() const {
  		 std::cout << getIdent() << "" << getNom() << "" << getPrenom() << std::endl;
+	}
+
+	bool Lecteur::oublier(std::string isbn){
+		for (int i = 0; i < _listeisbn.size(); i++){
+			if (_listeisbn.at(i) == isbn){
+				_listeisbn.erase(_listeisbn.begin()+i);
+				return 1;
+			}
+		}
+		return 0;
 	}
 }

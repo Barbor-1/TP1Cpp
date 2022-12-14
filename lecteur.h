@@ -12,8 +12,8 @@ public:
     std::string getNom() const;
     std::string getPrenom() const;
     void addToList(std::string isbn);
-    void AfficherLecteur() const;
-    
+    void afficherLecteur() const;
+    bool oublier(std::string isbn);
 
 
 

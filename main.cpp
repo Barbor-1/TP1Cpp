@@ -8,15 +8,14 @@
 #include "lecteur.h"
 
 
-int main(int argc, char const *argv[])
-{
+int main(){
     /* code */
     date::Date Anniv(13,9,2002);
     std::cout << date::toString(Anniv) << std::endl;
     bibli::Lecteur Test2;
   
 
-    Test2.AfficherLecteur();
+    Test2.afficherLecteur();
 
     bibli::Livre Test;
     Test.printEmprunt();

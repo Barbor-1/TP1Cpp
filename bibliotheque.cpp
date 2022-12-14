@@ -26,7 +26,7 @@ namespace bibli{
 		_listeEmprunt.push_back(emprunt);
 	}
 
-	void Bibliotheque::Emprunter(Livre livre, Lecteur lecteur){
+	void Bibliotheque::emprunter(Livre livre, Lecteur lecteur){
 		if(livre.getDispo()){
 			//Creer un emprunt
 			Emprunt empruntA(date::Date(1,1,2002), livre.getISBN(), lecteur.getIdent()); // la date d'emprunt est fausse
@@ -41,4 +41,17 @@ namespace bibli{
 
 	}
 
+	void Bibliotheque::restituer(std::string isbn, Lecteur lecteur){ //un lecteur a seulement sa propre ident, donc il peut pas restituer pour un autre
+		searchEmprunt(isbn,lecteur.getIdent()).disable();
+		//lecteur enleve le livre de sa liste
+
+	}
+
+	Emprunt Bibliotheque::searchEmprunt(std::string isbn, std::string ident){
+		for (int i = 0; i < _listeEmprunt.size(); i++){
+			if ((_listeEmprunt.at(i).getISBN() == isbn) && (_listeEmprunt.at(i).getIdent() == ident)){
+				return _listeEmprunt.at(i);
+			}
+		}
+	}
 }
