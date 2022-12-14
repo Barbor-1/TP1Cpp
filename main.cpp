@@ -44,16 +44,29 @@ int main(){
     bibli::Lecteur LecteurA("0000000a","Dubois","Angela");
     bibli::Lecteur LecteurB("00000001","Braise","Pierre");
 
+    Municipale.addAuteur(AuteurA);
+    Municipale.addAuteur(AuteurB);
+    Municipale.addAuteur(AuteurC);
+    Municipale.addAuteur(AuteurD);
+
+    Municipale.addLivre(LivreA);
+    Municipale.addLivre(LivreB);
+    Municipale.addLivre(LivreC);
+    Municipale.addLivre(LivreD);
+    Municipale.addLivre(LivreE);
+    Municipale.addLivre(LivreF);
+    Municipale.addLivre(LivreG);
+    Municipale.addLivre(LivreH);
+    Municipale.addLivre(LivreI);
+
+    Municipale.addLecteur(LecteurA);
+    Municipale.addLecteur(LecteurB);
+
     std::cout << AuteurA << AuteurB << AuteurC << AuteurD << LecteurA << LecteurB;
     std::cout << LivreA << LivreB << LivreC << LivreD << LivreE << LivreF << LivreG << LivreH << LivreI;
     Municipale.emprunter(LivreE,LecteurA);
     Municipale.emprunter(LivreE,LecteurB);
 
-    if(AuteurA == AuteurA){
-    	std::cout << "A = A" << std::endl;
-    }else{
-    	std::cout << "non" << std::endl;
-    }
     Municipale.searchLivre(AuteurA);
 
 

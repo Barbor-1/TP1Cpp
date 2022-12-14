@@ -55,7 +55,6 @@ namespace bibli{
 		std::vector<Livre> tab;
 		for (int i = 0; i < _listeLivre.size(); i++){
 			if (_listeLivre.at(i).getAuteurC() == auteur){
-				std::cout << "==" << std::endl;
 				tab.push_back(_listeLivre.at(i));
 			}
 		}
