@@ -16,6 +16,7 @@ namespace bibli{
 			void addEmprunt(Emprunt& emprunt);
 			void emprunter(Livre& livre, Lecteur& lecteur);
 			void restituer(std::string isbn, Lecteur& lecteur);
+			void searchLivre(Auteur& auteur);
 
 		private:
 			std::vector<Lecteur> _listeLecteur;

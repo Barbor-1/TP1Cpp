@@ -9,6 +9,7 @@ namespace bibli{
 		std::string getNom() const;
 		std::string getPrenom() const;
 		std::string getNomEntier() const;
+		std::string getIdent() const;
 
 	private:
 		std::string _identifiant;
@@ -17,6 +18,8 @@ namespace bibli{
 		date::Date _naissance;
 
 	};
+
+	bool operator == (const Auteur& a1, const Auteur& a2);
 
 	std::ostream& operator<<(std::ostream& os, Auteur& auteur);
 }

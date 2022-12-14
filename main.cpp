@@ -49,6 +49,13 @@ int main(){
     Municipale.emprunter(LivreE,LecteurA);
     Municipale.emprunter(LivreE,LecteurB);
 
+    if(AuteurA == AuteurA){
+    	std::cout << "A = A" << std::endl;
+    }else{
+    	std::cout << "non" << std::endl;
+    }
+    Municipale.searchLivre(AuteurA);
+
 
 
 

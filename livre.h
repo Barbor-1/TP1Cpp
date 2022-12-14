@@ -11,6 +11,7 @@ namespace bibli{
         Livre(std::string titre = "Hypersensible & introverti", Auteur auteur = Auteur("00000000", "DuMoulin", "Jean"), std::string genre = "Heroic Fantasy", date::Date dateParution= date::Date(1,1,1000), std::string isbn = "0000000000", bool _dispo = true);
         std::string getTitre() const;
         std::string getAuteur() const;
+        Auteur& getAuteurC();
         std::string getGenre() const;
         std::string getISBN() const;
         date::Date& getDate();
@@ -31,6 +32,8 @@ namespace bibli{
         bool _dispo;
 
     };
+
+    std::string toString(Livre livre);
 
     std::ostream& operator<<(std::ostream& os, Livre& livre);
 }

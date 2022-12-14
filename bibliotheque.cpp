@@ -51,6 +51,22 @@ namespace bibli{
 
 	}
 
+	void Bibliotheque::searchLivre(Auteur& auteur){
+		std::vector<Livre> tab;
+		for (int i = 0; i < _listeLivre.size(); i++){
+			if (_listeLivre.at(i).getAuteurC() == auteur){
+				std::cout << "==" << std::endl;
+				tab.push_back(_listeLivre.at(i));
+			}
+		}
+
+		std::string b;
+		for (int i = 0; i < tab.size(); i++){
+			b += toString(tab.at(i)) + " ";
+		}
+		std::cout << b << std::endl; // TODO: faire fonctionner
+	}
+
 	Emprunt Bibliotheque::searchEmprunt(std::string isbn, std::string ident){
 		for (int i = 0; i < _listeEmprunt.size(); i++){
 			if ((_listeEmprunt.at(i).getISBN() == isbn) && (_listeEmprunt.at(i).getIdent() == ident)){

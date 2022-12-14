@@ -14,6 +14,10 @@ namespace bibli{
         return _auteur.getNomEntier();
     }
 
+    Auteur& Livre::getAuteurC() {
+        return _auteur;
+    }
+
     std::string Livre::getGenre() const {
         return _genre;
     }
@@ -46,6 +50,10 @@ namespace bibli{
 
     void Livre::printVar() const {
         std::cout << getTitre() << " " << getAuteur() << " " << getGenre() << " " << getISBN() << std::endl;
+    }
+
+    std::string toString(Livre livre){
+        return livre.getTitre() + " " + livre.getAuteur() + " " + livre.getGenre() + " " + toString(livre.getDate());
     }
 
     std::ostream& operator<<(std::ostream& os, Livre& livre){
