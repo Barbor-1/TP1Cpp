@@ -29,6 +29,10 @@ namespace bibli{
         return _dispo;
     }
 
+    void Livre::setDispo(bool a) {
+        _dispo = a;
+    }
+
     void Livre::addToList(std::string id){
         _listeID.push_back(id);
     }

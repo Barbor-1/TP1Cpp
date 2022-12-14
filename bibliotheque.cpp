@@ -30,6 +30,7 @@ namespace bibli{
 		if(livre.getDispo()){
 			//Creer un emprunt
 			Emprunt empruntA(date::Date(1,1,2002), livre.getISBN(), lecteur.getIdent()); // la date d'emprunt est fausse
+			livre.setDispo(false);
 			//TODO : vérifier que livre est dans la liste? Et que l'on emprunte pas plusieurs fois le même livre
 			addEmprunt(empruntA);
 			livre.addToList(lecteur.getIdent());
