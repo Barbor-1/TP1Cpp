@@ -1,3 +1,4 @@
+#include <iostream>
 #include "livre.h"
 
 namespace bibli{
@@ -17,7 +18,7 @@ namespace bibli{
         return _genre;
     }
 
-    date::Date Livre::getDate(){
+    date::Date& Livre::getDate(){
         return _date;
     }
 
@@ -45,6 +46,11 @@ namespace bibli{
 
     void Livre::printVar() const {
         std::cout << getTitre() << " " << getAuteur() << " " << getGenre() << " " << getISBN() << std::endl;
+    }
+
+    std::ostream& operator<<(std::ostream& os, Livre& livre){
+        os << livre.getTitre() << " " << livre.getAuteur() << " " << livre.getGenre() << livre.getDate() << std::endl;
+        return os;
     }
 
 

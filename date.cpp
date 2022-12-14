@@ -107,6 +107,13 @@ namespace date {
         return std::to_string(d.day()) + "/" + std::to_string(d.month())+ "/" + std::to_string(d.years()) ;
     }
 
+    std::ostream& operator<<(std::ostream& os, const Date& date)  {
+		std::string month[12] = {"Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+		std::string to_display;
+		to_display = std::to_string(date.day()) + "/" + month[date.month()-1] + "/" + std::to_string(date.years());
+		os << to_display << std::endl;
+		return os;
+	}
     
 
 } // date

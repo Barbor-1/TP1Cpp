@@ -13,7 +13,7 @@ namespace bibli{
         std::string getAuteur() const;
         std::string getGenre() const;
         std::string getISBN() const;
-        date::Date getDate();
+        date::Date& getDate();
         bool getDispo() const;
         void setDispo(bool a);
 
@@ -32,6 +32,7 @@ namespace bibli{
 
     };
 
+    std::ostream& operator<<(std::ostream& os, Livre& livre);
 }
 
 #endif

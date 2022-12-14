@@ -7,7 +7,7 @@
 namespace bibli {
 class Lecteur {
 public:
-	Lecteur(std::string ident = "tomdy", std::string nom = "Dynak", std::string prenom = "Tom");
+	Lecteur(std::string ident = "00000000", std::string nom = "Dynak", std::string prenom = "Tom");
  	std::string getIdent() const;
     std::string getNom() const;
     std::string getPrenom() const;

@@ -28,6 +28,8 @@ namespace date {
    int dayOfYear(Date d);
    std::string toString(Date d);
 
+   std::ostream& operator<<(std::ostream& os, const Date& date);
+
 } // date
 
 #endif // DATE_H
