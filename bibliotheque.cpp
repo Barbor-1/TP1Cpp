@@ -96,8 +96,8 @@ namespace bibli{
 		for (int i = 0; i < tab.size(); i++){
 			b += toString(tab.at(i)) + " ";
 		}
-    float pourcent = (tab.size() / _listeLivre.size()) * 100;
-    std::cout << "Taille tab " << tab.size() << std::endl;
+    double pourcent = double(tab.size()) / double(_listeLivre.size()) * 100;
+    std::cout << "Taille tab " << tab.size() << " " << _listeLivre.size() << std::endl;
 		std::cout << b << std::endl << "Pourcentage de livre emprunter : " << pourcent << " %" << std::endl; // TODO: faire fonctionner
 	}
 

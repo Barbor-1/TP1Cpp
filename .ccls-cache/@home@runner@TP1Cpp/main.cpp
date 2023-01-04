@@ -66,11 +66,11 @@ int main(){
     std::cout << LivreA << LivreB << LivreC << LivreD << LivreE << LivreF << LivreG << LivreH << LivreI;
     Municipale.emprunter(LivreE,LecteurA);
     Municipale.emprunter(LivreE,LecteurB);
+    Municipale.emprunter(LivreH,LecteurB);
 
     Municipale.searchLivre(AuteurB);
     std::cout << std::endl;
     Municipale.searchLivreDispo();
-
 
 
 
