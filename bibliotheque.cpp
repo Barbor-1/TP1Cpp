@@ -123,4 +123,23 @@ namespace bibli{
 		}
 		std::cout << b << std::endl; // TODO: faire fonctionner
   }
+
+  int Bibliotheque::nombreLivreEmprunter(std::string ident){
+    int a;
+    for (int i = 0; i < _listeEmprunt.size(); i++){
+			if (_listeEmprunt.at(i).getIdent() == ident){
+				a++;
+			}
+		}
+    return a;
+  }
+
+  void Bibliotheque::classementLecteur(){
+    std::vector<int> tab;
+    for (int i = 0; i < _listeLecteur.size(); i++){
+		  tab.push_back(nombreLivreEmprunter(_listeLecteur.at(i).getIdent()));
+		}
+    //Tri de tab, mais on a le nb d'emprunt pas relier a leur ident
+    
+  }
 }
