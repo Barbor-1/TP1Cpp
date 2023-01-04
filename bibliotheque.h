@@ -26,6 +26,7 @@ namespace bibli{
 			std::vector<Emprunt> _listeEmprunt;
 			Emprunt searchEmprunt(std::string isbn, std::string ident);
 			Livre searchLivre(std::string isbn);
+      int findListLivrePos(std::string isbn);
       
 	};
 

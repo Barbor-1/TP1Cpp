@@ -70,8 +70,6 @@ int main(){
     Municipale.searchLivre(AuteurB);
     std::cout << std::endl;
     Municipale.searchLivreDispo();
-    std::cout << LivreE.getDispo() << " " << LivreA.getDispo() << std::endl;
-
 
 
 

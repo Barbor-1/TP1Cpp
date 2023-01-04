@@ -32,6 +32,7 @@ namespace bibli{
 			//Creer un emprunt
 			Emprunt empruntA(date::Date(1,1,2002), livre.getISBN(), lecteur.getIdent()); // la date d'emprunt est fausse
 			livre.setDispo(false);
+      _listeLivre.at(findListLivrePos(livre.getISBN())).setDispo(false);
 			//TODO : vérifier que livre est dans la liste? Et que l'on emprunte pas plusieurs fois le même livre
 			addEmprunt(empruntA);
 			livre.addToList(lecteur.getIdent());
@@ -47,6 +48,7 @@ namespace bibli{
 		searchEmprunt(isbn,lecteur.getIdent()).disable();
 		//TODO : lecteur enleve le livre de sa liste
 		searchLivre(isbn).setDispo(true);
+    _listeLivre.at(findListLivrePos(isbn)).setDispo(true);
 
 
 	}
@@ -85,8 +87,7 @@ namespace bibli{
 	void Bibliotheque::searchLivreDispo(){
 		std::vector<Livre> tab;
 		for (int i = 0; i < _listeLivre.size(); i++){
-      std::cout << "test " << _listeLivre.at(i).getDispo() << std::endl; //On recupere la bonne info?? comment dispo peut changer entre 2 lignes qui l'affecte pas
-			if (_listeLivre.at(i).getDispo()){
+			if (!_listeLivre.at(i).getDispo()){
 				tab.push_back(_listeLivre.at(i));
 			}
 		}
@@ -99,4 +100,12 @@ namespace bibli{
     std::cout << "Taille tab " << tab.size() << std::endl;
 		std::cout << b << std::endl << "Pourcentage de livre emprunter : " << pourcent << " %" << std::endl; // TODO: faire fonctionner
 	}
+
+  int Bibliotheque::findListLivrePos(std::string isbn){
+    for (int i = 0; i < _listeLivre.size(); i++){
+			if (_listeLivre.at(i).getISBN() == isbn){
+				return i;
+			}
+		}
+  }
 }
