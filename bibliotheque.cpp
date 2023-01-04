@@ -63,7 +63,7 @@ namespace bibli{
 
 		std::string b;
 		for (int i = 0; i < tab.size(); i++){
-			b += toString(tab.at(i)) + " ";
+			b += toString(tab.at(i)) + "\n";
 		}
 		std::cout << b << std::endl; // TODO: faire fonctionner
 	}
@@ -94,7 +94,7 @@ namespace bibli{
 
 		std::string b;
 		for (int i = 0; i < tab.size(); i++){
-			b += toString(tab.at(i)) + " ";
+			b += toString(tab.at(i)) + "\n";
 		}
     double pourcent = double(tab.size()) / double(_listeLivre.size()) * 100;
     std::cout << "Taille tab " << tab.size() << " " << _listeLivre.size() << std::endl;
@@ -107,5 +107,20 @@ namespace bibli{
 				return i;
 			}
 		}
+  }
+
+  void Bibliotheque::searchLivreLecteur(std::string ident){
+    std::vector<Livre> tab;
+    for (int i = 0; i < _listeEmprunt.size(); i++){
+			if (_listeEmprunt.at(i).getIdent() == ident){
+				tab.push_back(searchLivre(_listeEmprunt.at(i).getISBN()));
+			}
+		}
+    
+		std::string b;
+		for (int i = 0; i < tab.size(); i++){
+			b += toString(tab.at(i)) + "\n";
+		}
+		std::cout << b << std::endl; // TODO: faire fonctionner
   }
 }

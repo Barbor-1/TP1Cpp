@@ -18,6 +18,7 @@ namespace bibli{
 			void restituer(std::string isbn, Lecteur& lecteur);
 			void searchLivre(Auteur& auteur);
       void searchLivreDispo();
+      void searchLivreLecteur(std::string ident);
 
 		private:
 			std::vector<Lecteur> _listeLecteur;
