@@ -85,7 +85,8 @@ namespace bibli{
 	void Bibliotheque::searchLivreDispo(){
 		std::vector<Livre> tab;
 		for (int i = 0; i < _listeLivre.size(); i++){
-			if (!_listeLivre.at(i).getDispo()){
+      std::cout << "test " << _listeLivre.at(i).getDispo() << std::endl; //On recupere la bonne info?? comment dispo peut changer entre 2 lignes qui l'affecte pas
+			if (_listeLivre.at(i).getDispo()){
 				tab.push_back(_listeLivre.at(i));
 			}
 		}
@@ -95,6 +96,7 @@ namespace bibli{
 			b += toString(tab.at(i)) + " ";
 		}
     float pourcent = (tab.size() / _listeLivre.size()) * 100;
+    std::cout << "Taille tab " << tab.size() << std::endl;
 		std::cout << b << std::endl << "Pourcentage de livre emprunter : " << pourcent << " %" << std::endl; // TODO: faire fonctionner
 	}
 }
