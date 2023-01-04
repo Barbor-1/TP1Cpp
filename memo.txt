@@ -1,0 +1,8 @@
+Probleme durant le tp
+
+Avoir git et g++ qui marche en changeant de salle
+
+
+notamment sur la gr05, alors que x2go ne marche pas on a galeré a avoir make et g++ qui marche sur vscode de Windows (msys64). -> Solution : replit.com
+
+Ne pas se perdre dans le code et ce souvenir de comment on a implementer les classes
