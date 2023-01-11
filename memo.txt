@@ -9,3 +9,5 @@ notamment sur la gr05, alors que x2go ne marche pas on a galeré a avoir make et
 Ne pas se perdre dans le code et ce souvenir de comment on a implementer les classes
 
 Erreur recurrente : oublier quand une classe a été copié et donc n'a pas les changements de l'original ou vice-versa (ex: copier dans une liste) -> faire des references par exemples en paramètre de fonctions
+
+replit problème : il demande de se reconnecter a git et rajoute un "initial commit" tout en ne prenant pas une version du code a jour automatiquement

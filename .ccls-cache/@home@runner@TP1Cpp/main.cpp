@@ -24,7 +24,7 @@ int main(){
 
     bibli::Auteur Genie;
     std::cout << Genie.getNomEntier() << std::endl;*/
-
+  
     bibli::Bibliotheque Municipale;
     bibli::Auteur AuteurA("0000000a","Gimli","Dimitri", date::Date(1,10,1963));
     bibli::Auteur AuteurB("00000001","Toukan","Pedro", date::Date(22,6,1989));
@@ -66,6 +66,7 @@ int main(){
     std::cout << LivreA << LivreB << LivreC << LivreD << LivreE << LivreF << LivreG << LivreH << LivreI;
     Municipale.emprunter(LivreE,LecteurA);
     Municipale.emprunter(LivreC,LecteurA);
+    //On ne peut pas emprunter 2 fois le même livre
     Municipale.emprunter(LivreE,LecteurB);
     Municipale.emprunter(LivreH,LecteurB);
 
@@ -74,7 +75,7 @@ int main(){
     Municipale.searchLivreDispo();
     std::cout << std::endl;
     Municipale.searchLivreLecteur(LecteurA.getIdent());
-
+    std::cout << "Classement des lecteurs" << std::endl;
     Municipale.classementLecteur();
     return 0;
 }
