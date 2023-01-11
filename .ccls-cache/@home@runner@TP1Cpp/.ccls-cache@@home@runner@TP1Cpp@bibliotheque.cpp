@@ -125,7 +125,7 @@ namespace bibli{
   }
 
   int Bibliotheque::nombreLivreEmprunter(std::string ident){
-    int a = 0;
+    int a;
     for (int i = 0; i < _listeEmprunt.size(); i++){
 			if (_listeEmprunt.at(i).getIdent() == ident){
 				a++;
@@ -133,42 +133,13 @@ namespace bibli{
 		}
     return a;
   }
-  Lecteur Bibliotheque::searchLecteur(std::string ident){
-    for (int i = 0; i < _listeLecteur.size(); i++){
-      if(_listeLecteur.at(i).getIdent() == ident){
-        return _listeLecteur.at(i);
-      }
-    }
-  }
 
   void Bibliotheque::classementLecteur(){
     std::vector<int> tab;
-    std::vector<std::string> tab2;
     for (int i = 0; i < _listeLecteur.size(); i++){
 		  tab.push_back(nombreLivreEmprunter(_listeLecteur.at(i).getIdent()));
-      tab2.push_back(_listeLecteur.at(i).getIdent());
 		}
-    for (int i = 0; i < tab.size(); i++){
-      for (int j = 0; j < tab.size()-1; j++){
-        if(tab.at(j) < tab.at(j+1)){
-          int a;
-          std::string b;
-          a = tab.at(j);
-          tab.at(j) = tab.at(j+1);
-          tab.at(j+1) = a;
-          b = tab2.at(j);
-          tab2.at(j) = tab2.at(j+1);
-          tab2.at(j+1) = b;
-        }
-      }
-    }
-    for (int i = 0; i < tab2.size(); i++){
-      searchLecteur(tab2.at(i)).afficherLecteur();
-      std::cout << "Nombre de livre emprunter : " << tab.at(i) << std::endl;
-    }
     //Tri de tab, mais on a le nb d'emprunt pas relier a leur ident
     // double boucle for de tab size et qui a la fin de la boucle interne cout le toString du lecteur avec le plus d'emprunt
-    //Ou on tri ce tableau et en parallele on fait les memes deplacements sur un tableau des ident
-    
   }
 }

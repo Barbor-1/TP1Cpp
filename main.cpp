@@ -75,6 +75,6 @@ int main(){
     std::cout << std::endl;
     Municipale.searchLivreLecteur(LecteurA.getIdent());
 
-
+    Municipale.classementLecteur();
     return 0;
 }

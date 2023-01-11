@@ -30,6 +30,7 @@ namespace bibli{
 			Livre searchLivre(std::string isbn);
       int findListLivrePos(std::string isbn);
       int nombreLivreEmprunter(std::string ident);
+      Lecteur searchLecteur(std::string ident);
       
 	};
 
